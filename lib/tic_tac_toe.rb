@@ -78,7 +78,7 @@ end
   end
 end
 
-def play(@board)
+def play(board)
   until over?(@board) == true || won?(@board) != false
   puts 'turn'
     turn(@board)
@@ -91,6 +91,7 @@ elsif draw?(@board)
     return nil
   end
 end
+
   def current_player
     turn_count % 2 == 0 ? "X" : "O"
   end
