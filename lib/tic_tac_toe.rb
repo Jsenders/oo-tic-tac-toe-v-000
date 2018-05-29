@@ -46,7 +46,7 @@ def turn_count
   @board.count{|token| token == "X" || token == "O"}
 end
 
-def current_player(board)
+def current_player
   if turn_count(board)%2 ==0
     current_player = "X"
   else
@@ -55,7 +55,7 @@ end
 return current_player
 end
 
-def won?(board)
+def won?
 WIN_COMBINATIONS.each do |array|
     if array.all? { |value| board[value] =="X" } || array.all? { |value| board[value] =="O" }
       return array
@@ -64,26 +64,26 @@ WIN_COMBINATIONS.each do |array|
   return false
 end
 
-def full?(board)
+def full?
   !@board.any? { |x| x == " " }
 end
 
-def draw?(board)
+def draw?
   !won?(board) && full?(board)
 end
 
-def over?(board)
+def over?
   won?(board) || draw?(board)
 end
 
-  def winner(board)
+  def winner
   if winning_combo = won?(board)
     board[winning_combo.first]
   else
   end
 end
 
-def play(board)
+def play
   until over?(@board) == true || won?(@board) != false
   puts 'turn'
     turn(@board)
