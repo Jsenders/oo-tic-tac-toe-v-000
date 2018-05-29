@@ -76,8 +76,8 @@ def over?
 end
 
   def winner
-  if winning_combo = won?(board)
-    board[winning_combo.first]
+  if winning_combo = won?
+    @board[winning_combo.first]
   else
   end
 end
