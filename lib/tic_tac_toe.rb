@@ -39,13 +39,12 @@ end
 
 def turn_count(board)
   counter = 0
-  board.each do |user|
+  @board.each do |user|
     if user == "X" || user == "O"
       counter +=1
   end
 end
 return counter
-end
 
 def current_player(board)
   if turn_count(board)%2 ==0
@@ -90,7 +89,7 @@ def play(board)
     turn(board)
   end
   if won?(board)
-  puts "Congratulations #{winner(board)}!" 
+  puts "Congratulations #{winner(board)}!"
   elsif draw?(board)
     puts "Cat's Game!"
   else
