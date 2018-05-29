@@ -83,13 +83,13 @@ end
 end
 
 def play
-  until over?(@board) == true || won?(@board) != false
+  until over? == true || won? != false
   puts 'turn'
-    turn(@board)
+    turn
   end
-  if won?(@board)
+  if won?
   puts "Congratulations #{winner(board)}!"
-elsif draw?(@board)
+elsif draw?
     puts "Cat's Game!"
   else
     return nil
