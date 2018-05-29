@@ -12,3 +12,4 @@ class TicTacToe
   def TicTacToe
     @TicTacToe
   end
+end
