@@ -68,12 +68,12 @@ def full?(board)
   !@board.any? { |x| x == " " }
 end
 
-def draw?
-  !won? && full?
+def draw?(board)
+  !won?@board && full?@board
 end
 
-def over?
-  won? || draw?
+def over?(board)
+  won?@board || draw?@board
 end
 
   def winner(board)
