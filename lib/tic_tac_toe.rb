@@ -23,9 +23,9 @@ WIN_COMBINATIONS = [[0,1,2],[3,4,5],[6,7,8],[0,4,8],[2,4,6],[0,3,6],[1,4,7],[2,5
 
   def valid_move?(index)
   index.between?(0,8) && !position_taken?(index)
-end
+  end
 
-def turn(board)
+  def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
   index = input_to_index(input)
@@ -35,16 +35,11 @@ def turn(board)
   else
     turn(board)
   end
-end
-
-def turn_count(board)
-  counter = 0
-  @board.each do |user|
-    if user == "X" || user == "O"
-      counter +=1
   end
+
+def turn_count
+  @board.count{|token| token == "X" || token == "O"}
 end
-return counter
 
 def current_player(board)
   if turn_count(board)%2 ==0
@@ -99,8 +94,6 @@ end
   def current_player
     turn_count % 2 == 0 ? "X" : "O"
   end
-
-  def turn_count
-    @board.count{|token| token == "X" || token == "O"}
-  end
+  
+end
 end
