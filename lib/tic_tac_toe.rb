@@ -56,7 +56,7 @@ end
 
 def won?
 WIN_COMBINATIONS.each do |array|
-    if array.all? { |value| board[value] =="X" } || array.all? { |value| board[value] =="O" }
+    if array.all? { |value| @board[value] =="X" } || array.all? { |value| @board[value] =="O" }
       return array
     end
   end
