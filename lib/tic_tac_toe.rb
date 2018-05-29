@@ -20,7 +20,6 @@ WIN_COMBINATIONS = [[0,1,2],[3,4,5],[6,7,8],[0,4,8],[2,4,6],[0,3,6],[1,4,7],[2,5
   def move(index, current_player)
     @board[index] = current_player
   end
-end
 
   def valid_move?(index)
   index.between?(0,8) && !position_taken?(index)
@@ -79,14 +78,14 @@ end
   end
 end
 
-def play(board)
-  until over?(board) == true || won?(board) != false
+def play(@board)
+  until over?(@board) == true || won?(@board) != false
   puts 'turn'
-    turn(board)
+    turn(@board)
   end
-  if won?(board)
+  if won?(@board)
   puts "Congratulations #{winner(board)}!"
-  elsif draw?(board)
+elsif draw?(@board)
     puts "Cat's Game!"
   else
     return nil
