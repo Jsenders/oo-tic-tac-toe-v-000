@@ -84,17 +84,15 @@ end
 end
 
 def play
-  until over?(@board) == true || won?(@board) != false
-  puts 'turn'
-    turn(@board)
+  while over? == false
+    turn
   end
-  if won?(@board)
-  puts "Congratulations #{winner(board)}!"
-elsif draw?(@board)
+  if won?
+    puts "Congratulations #{winner}!"
+  elsif draw?
     puts "Cat's Game!"
-  else
-    return nil
   end
+end
 end
 
   def current_player
